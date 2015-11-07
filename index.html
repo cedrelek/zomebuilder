@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="ZomeBuilder">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Zome builder</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="bower_components/three.js/three.js"></script>
+    <script src="lib/mouse-tracking/js/Detector.js"></script>
+    <script src="lib/mouse-tracking/js/stats.min.js"></script>
+    <script src="lib/mouse-tracking/js/OrbitControls.js"></script>
+    <script src="lib/zomeView.js"></script>
+    <script src='lib/zomeDefinition.js'></script>
+    <script src="lib/views.js"></script>
+    <script src="index.js"></script>
+    <meta name="author" content="Cedric Lechevrel">
+  </head>
+  <body class="container-fluid" ng-controller="viewController as viewCtrl">
+
+    <div class="row" >
+      <div class="col-md-8">
+        <div id="zomeView" ng-show="viewCtrl.view.currentView == 1"></div>
+      </div>
+      <div class="col-md-4">
+
+        <div class="panel-group">
+          <div class="panel panel-default" ng-controller="ZomeViewController as zomeView">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a  ng-click="viewCtrl.view.currentView = 1">
+                  Caracteristique du zome
+                </a>
+              </h4>
+            </div>
+            <div class="panel-collapse collapse in" >
+              <div class="panel-body" ng-show="viewCtrl.view.currentView == 1">
+                <zome-view-comp ></zome-view-comp>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

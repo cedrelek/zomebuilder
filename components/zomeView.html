@@ -1,0 +1,17 @@
+<div>
+  <div class="form-group">
+    <label for="zomeOrder">Ordre (numbre de murs)</label>
+    <input type="number" class="form-control" id="zomeOrder" ng-model="zomeView.orderNumber" ng-change="zomeView.rebuildZome()"></input>
+  </div>
+  <div class="form-group">
+    <label for="zomeLevelHeight">Hauteur des niveau</label>
+    <input type="number" class="form-control" id="zomeLevelHeight" ng-model="zomeView.levelHeight" ng-change="zomeView.updateZome()"></input>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <label for="zomeAngle">Angle de la base par rapport a l'horizontale</label>
+      <input type="number" class="form-control" id="zomeAngle" ng-model="zomeView.baseAngle" ng-change="zomeView.updateZome()"></input>
+    </div>
+  </div>
+
+</div>

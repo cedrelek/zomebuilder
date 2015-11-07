@@ -1,0 +1,27 @@
+{
+  "name": "zomebuilder",
+  "main": "index.js",
+  "authors": [
+    "Cedric Lechevrel <cedrelek@gmail.com>"
+  ],
+  "description": "Zome Builder to build zome",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "d3": "~3.5.6",
+    "three.js": "~0.72.0"
+  }
+}
