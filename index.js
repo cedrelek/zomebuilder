@@ -1,6 +1,7 @@
 angular.module("ZomeBuilder", ["ViewModule",
                                "ZomeDefinitionModule",
-                               "ZomeViewModule"])
+                               "ZomeViewModule",
+                               "3DViewModule"])
   .directive("zomeViewComp", function() {
     return {
       templateUrl: 'components/zomeView.html',
