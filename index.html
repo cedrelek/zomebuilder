@@ -17,7 +17,9 @@
     <script src="lib/mouse-tracking/js/OrbitControls.js"></script>
     <script src="lib/3dview.js"></script>
     <script src="lib/zomeView.js"></script>
+    <script src="lib/floorDefinition.js"></script>
     <script src='lib/zomeDefinition.js'></script>
+    <script src='lib/wallDefinition.js'></script>
     <script src="lib/views.js"></script>
     <script src="index.js"></script>
     <meta name="author" content="Cedric Lechevrel">
@@ -26,26 +28,58 @@
 
     <div class="row" >
       <div class="col-md-8">
-        <div id="zomeView" ng-show="viewCtrl.view.currentView == 1"></div>
+        <div id="zomeView"></div>
       </div>
       <div class="col-md-4">
-
         <div class="panel-group">
+          <!-- Zome view definition -->
           <div class="panel panel-default" ng-controller="ZomeViewController as zomeView">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a  ng-click="viewCtrl.view.currentView = 1">
+                <a  >
                   Caracteristique du zome
                 </a>
               </h4>
             </div>
             <div class="panel-collapse collapse in" >
-              <div class="panel-body" ng-show="viewCtrl.view.currentView == 1">
+              <div class="panel-body" >
                 <zome-view-comp ></zome-view-comp>
               </div>
             </div>
           </div>
-
+          <!-- End Zome view definition -->
+          <!-- Floor definition -->
+          <div class="panel panel-default" ng-controller="FloorDefinitionController as floorDef">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a  >
+                  Découpe de la forme
+                </a>
+              </h4>
+            </div>
+            <div class="panel-collapse collapse in" >
+              <div class="panel-body" >
+                <floor-definition-comp ></floor-definition-comp>
+              </div>
+            </div>
+          </div>
+          <!-- End Floor definition -->
+          <!-- Wall definition -->
+          <div class="panel panel-default" ng-controller="WallDefinitionController as wallDef">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a  >
+                  Hauteur des murs
+                </a>
+              </h4>
+            </div>
+            <div class="panel-collapse collapse in" >
+              <div class="panel-body" >
+                <wall-definition-comp></wall-definition-comp>
+              </div>
+            </div>
+          </div>
+          <!-- End Wall definition -->
         </div>
       </div>
     </div>
