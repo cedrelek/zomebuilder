@@ -24,4 +24,11 @@ angular.module("ZomeBuilder", ['ViewModule',
       restrict : 'E',
       replace : true
     }
-  });
+  })
+  .controller("InitAppController", ['3DService', 'zomeDefinitionService', 'zomeCalculatorService', function(dddview, zomeDef, calculator) {
+    this.init = function() {
+      dddview().init();
+      calculator().computeZome(zomeDef());
+      dddview().updateZome(zomeDef());
+    }
+  }]);

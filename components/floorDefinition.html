@@ -1,6 +1,16 @@
 <div>
   <div class="form-group">
-    <label for="floorLevel">Découpe de la forme sol</label>
+    <label for="floorLevel">Nombre de couronnes invisibles</label>
     <input type="number" class="form-control" id="floorLevel" ng-model="floorDef.floorLevel" ng-change="floorDef.changeFloorLevel()"></input>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="floorDef.wireframeVisible" ng-change="floorDef.changeVisible()"></input>Cacher les surfaces
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="floorDef.hideAll" ng-change="floorDef.changeVisible()"></input>Cacher les traits
+    </label>
   </div>
 </div>

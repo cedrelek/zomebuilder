@@ -3,4 +3,9 @@
     <label for="wallHeight">Hauteur des murs</label>
     <input type="number" class="form-control" id="wallHeight" ng-model="wallDef.height" ng-change="wallDef.changeHeight()"></input>
   </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="wallDef.wallsVisible" ng-change="wallDef.changeVisible()"></input>Murs visibles
+    </label>
+  </div>
 </div>
