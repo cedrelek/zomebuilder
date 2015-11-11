@@ -16,6 +16,7 @@
     <script src="lib/mouse-tracking/js/stats.min.js"></script>
     <script src="lib/mouse-tracking/js/OrbitControls.js"></script>
     <script src="lib/3dview.js"></script>
+    <script src="lib/3dzomeshapebuilder.js"></script>
     <script src="lib/zomeView.js"></script>
     <script src="lib/floorDefinition.js"></script>
     <script src='lib/zomeDefinition.js'></script>
@@ -30,7 +31,6 @@
     <div class="row" >
       <div class="col-md-8">
         <div id="zomeView" ng-show="viewCtrl.view.currentView < 4"></div>
-        <div id="logDimensionGraph" ng-show="viewCtrl.view.currentView == 4"></div>
       </div>
       <div class="col-md-4">
         <div class="panel-group">
@@ -43,7 +43,7 @@
                 </a>
               </h4>
             </div>
-            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView < 4">
+            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView == 1">
               <div class="panel-body"  >
                 <zome-view-comp ></zome-view-comp>
               </div>
@@ -59,7 +59,7 @@
                 </a>
               </h4>
             </div>
-            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView < 4" >
+            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView == 2" >
               <div class="panel-body">
                 <floor-definition-comp ></floor-definition-comp>
               </div>
@@ -75,7 +75,7 @@
                 </a>
               </h4>
             </div>
-            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView < 4">
+            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView == 3">
               <div class="panel-body" >
                 <wall-definition-comp></wall-definition-comp>
               </div>

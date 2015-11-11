@@ -4,7 +4,21 @@ angular.module("ZomeBuilder", ['ViewModule',
                                '3DViewModule',
                                'FloorDefinitionModule',
                              'WallDefinitionModule',
-                           'LogDimensionModule'])
+                           'LogDimensionModule',
+                         '3DZomeShapeBuilderModule'])
+
+  .controller("InitAppController",
+
+  ['zomeDefinitionService', 'zomeCalculatorService', '3DService', '3DZomeShapeBuilderService',
+
+  function(zomeDef, calculator, dddview, dddBuilder)  {
+    this.init = function() {
+      dddview().init();
+      calculator().computeZome(zomeDef());
+      var viewBuilder = dddBuilder().getViewBuilder(zomeDef());
+      dddview().updateView(viewBuilder);
+    }
+  }])
   .directive('zomeViewComp', function() {
     return {
       templateUrl: 'components/zomeView.html',
@@ -32,11 +46,4 @@ angular.module("ZomeBuilder", ['ViewModule',
       restrict : 'E',
       replace : true
     }
-  })
-  .controller("InitAppController", ['3DService', 'zomeDefinitionService', 'zomeCalculatorService', function(dddview, zomeDef, calculator) {
-    this.init = function() {
-      dddview().init();
-      calculator().computeZome(zomeDef());
-      dddview().updateZome(zomeDef());
-    }
-  }]);
+  });
