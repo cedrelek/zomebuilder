@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ZomeBuilder" ng-controller="InitAppController as appCtrl" ng-init='appCtrl.init()'>
+<html ng-app="ZomeBuilder" ng-controller="InitAppController as appCtrl" ng-init="appCtrl.init()">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Zome builder</title>
@@ -17,12 +17,14 @@
     <script src="lib/mouse-tracking/js/OrbitControls.js"></script>
     <script src="lib/3dview.js"></script>
     <script src="lib/3dzomeshapebuilder.js"></script>
+    <script src="lib/3dBeamDefinitionbuilder.js"></script>
     <script src="lib/zomeView.js"></script>
     <script src="lib/floorDefinition.js"></script>
-    <script src='lib/zomeDefinition.js'></script>
-    <script src='lib/wallDefinition.js'></script>
+    <script src="lib/zomeDefinition.js"></script>
+    <script src="lib/wallDefinition.js"></script>
     <script src="lib/views.js"></script>
-    <script src="lib/logDimension.js"></script>
+    <script src="lib/rhombeDefinition.js"></script>
+    <script src="lib/rhombeView.js"></script>
     <script src="index.js"></script>
     <meta name="author" content="Cedric Lechevrel">
   </head>
@@ -30,7 +32,7 @@
 
     <div class="row" >
       <div class="col-md-8">
-        <div id="zomeView" ng-show="viewCtrl.view.currentView < 4"></div>
+        <div id="zomeView"></div>
       </div>
       <div class="col-md-4">
         <div class="panel-group">
@@ -38,7 +40,7 @@
           <div class="panel panel-default" ng-controller="ZomeViewController as zomeView">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a  ng-click="viewCtrl.view.currentView = 1">
+                <a  ng-click="viewCtrl.view.currentView = 1; zomeView.render()">
                   Caracteristique du zome
                 </a>
               </h4>
@@ -54,7 +56,7 @@
           <div class="panel panel-default" ng-controller="FloorDefinitionController as floorDef">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a  ng-click="viewCtrl.view.currentView = 2">
+                <a  ng-click="viewCtrl.view.currentView = 2; floorDef.render()">
                   Découpe de la forme
                 </a>
               </h4>
@@ -70,7 +72,7 @@
           <div class="panel panel-default" ng-controller="WallDefinitionController as wallDef">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a  ng-click="viewCtrl.view.currentView = 3">
+                <a  ng-click="viewCtrl.view.currentView = 3; wallDef.render()">
                   Hauteur des murs
                 </a>
               </h4>
@@ -83,17 +85,17 @@
           </div>
           <!-- End Wall definition -->
           <!-- Log dimension  -->
-          <div class="panel panel-default" ng-controller="LogDimensionController as logDimension">
+          <div class="panel panel-default" ng-controller="RhombeViewController as rhombeView">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a  ng-click="viewCtrl.view.currentView = 4">
+                <a  ng-click="viewCtrl.view.currentView = 4; rhombeView.render()">
                   Dimension des poutres
                 </a>
               </h4>
             </div>
             <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView == 4">
               <div class="panel-body" >
-                <log-dimension-comp></log-dimension-comp>
+                <rhombe-view-comp></rhombe-view-comp>
               </div>
             </div>
           </div>

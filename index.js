@@ -3,9 +3,11 @@ angular.module("ZomeBuilder", ['ViewModule',
                                'ZomeViewModule',
                                '3DViewModule',
                                'FloorDefinitionModule',
-                             'WallDefinitionModule',
-                           'LogDimensionModule',
-                         '3DZomeShapeBuilderModule'])
+                               'WallDefinitionModule',
+                               'RhombeDefinitionModule',
+                               '3DZomeShapeBuilderModule',
+                               'RhombeViewModule',
+                               '3DBeamDefinitionBuilderModule'])
 
   .controller("InitAppController",
 
@@ -17,33 +19,33 @@ angular.module("ZomeBuilder", ['ViewModule',
       calculator().computeZome(zomeDef());
       var viewBuilder = dddBuilder().getViewBuilder(zomeDef());
       dddview().updateView(viewBuilder);
-    }
+    };
   }])
   .directive('zomeViewComp', function() {
     return {
       templateUrl: 'components/zomeView.html',
       restrict: 'E',
       replace: true
-    }
+    };
   })
   .directive('floorDefinitionComp', function() {
     return {
       templateUrl : 'components/floorDefinition.html',
       restrict : 'E',
       replace : true
-    }
+    };
   })
   .directive('wallDefinitionComp', function() {
     return {
       templateUrl : 'components/wallDefinition.html',
       restrict : 'E',
       replace : true
-    }
+    };
   })
-  .directive('logDimensionComp', function() {
+  .directive('rhombeViewComp', function() {
     return {
-      templateUrl : 'components/logDimension.html',
+      templateUrl : 'components/rhombeView.html',
       restrict : 'E',
       replace : true
-    }
+    };
   });
