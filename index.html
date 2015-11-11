@@ -25,6 +25,8 @@
     <script src="lib/views.js"></script>
     <script src="lib/rhombeDefinition.js"></script>
     <script src="lib/rhombeView.js"></script>
+    <script src="lib/3DCompleteZomeBuilder.js"></script>
+    <script src="lib/completeZomeView.js"></script>
     <script src="index.js"></script>
     <meta name="author" content="Cedric Lechevrel">
   </head>
@@ -100,6 +102,22 @@
             </div>
           </div>
           <!-- End Log dimension -->
+          <!-- Zome complet  -->
+          <div class="panel panel-default" ng-controller="CompleteZomeViewController as completeZomeView">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a  ng-click="viewCtrl.view.currentView = 5; completeZomeView.render()">
+                  Dimension des poutres
+                </a>
+              </h4>
+            </div>
+            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView == 5">
+              <div class="panel-body" >
+                <complete-zome-view-comp></complete-zome-view-comp>
+              </div>
+            </div>
+          </div>
+          <!-- End zome complet -->
         </div>
       </div>
     </div>

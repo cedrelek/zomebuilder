@@ -7,7 +7,9 @@ angular.module("ZomeBuilder", ['ViewModule',
                                'RhombeDefinitionModule',
                                '3DZomeShapeBuilderModule',
                                'RhombeViewModule',
-                               '3DBeamDefinitionBuilderModule'])
+                               '3DBeamDefinitionBuilderModule',
+                               '3DZomeShapeBuilderModule',
+                               'CompleteZomeViewModule'])
 
   .controller("InitAppController",
 
@@ -45,6 +47,13 @@ angular.module("ZomeBuilder", ['ViewModule',
   .directive('rhombeViewComp', function() {
     return {
       templateUrl : 'components/rhombeView.html',
+      restrict : 'E',
+      replace : true
+    };
+  })
+  .directive('completeZomeViewComp', function() {
+    return {
+      templateUrl : 'components/completeZomeView.html',
       restrict : 'E',
       replace : true
     };
