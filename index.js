@@ -3,7 +3,8 @@ angular.module("ZomeBuilder", ['ViewModule',
                                'ZomeViewModule',
                                '3DViewModule',
                                'FloorDefinitionModule',
-                             'WallDefinitionModule'])
+                             'WallDefinitionModule',
+                           'LogDimensionModule'])
   .directive('zomeViewComp', function() {
     return {
       templateUrl: 'components/zomeView.html',
@@ -21,6 +22,13 @@ angular.module("ZomeBuilder", ['ViewModule',
   .directive('wallDefinitionComp', function() {
     return {
       templateUrl : 'components/wallDefinition.html',
+      restrict : 'E',
+      replace : true
+    }
+  })
+  .directive('logDimensionComp', function() {
+    return {
+      templateUrl : 'components/logDimension.html',
       restrict : 'E',
       replace : true
     }
