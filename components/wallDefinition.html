@@ -1,6 +1,9 @@
 <div>
   <div class="form-group">
-    <label for="wallHeight">Hauteur des murs</label>
+    <label for="wallHeight">Hauteur des murs en cm
+      <button popover-placement="left" uib-popover="Il y a le chois entre avoir des mur normaux 230cm ou bien une surface de quelques cm sur laquelle repose le zome"
+      type="button" class="btn btn-default">?</button>
+    </label>
     <input type="number" class="form-control" id="wallHeight" ng-model="wallDef.height" ng-change="wallDef.changeHeight()"></input>
   </div>
   <div class="checkbox">

@@ -1,6 +1,9 @@
 <div>
   <div class="form-group">
-    <label for="floorLevel">Nombre de couronnes invisibles</label>
+    <label for="floorLevel">Nombre de couronnes invisibles
+      <button popover-placement="left" uib-popover="Permer de decouper la forme pour ne garder que le toit par exemple"
+      type="button" class="btn btn-default">?</button>
+    </label>
     <input type="number" class="form-control" id="floorLevel" ng-model="floorDef.floorLevel" ng-change="floorDef.changeFloorLevel()"></input>
   </div>
   <div class="checkbox">

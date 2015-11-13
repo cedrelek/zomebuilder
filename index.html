@@ -10,6 +10,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/bootstrap.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/d3/d3.min.js"></script>
     <script src="bower_components/three.js/three.js"></script>
     <script src="lib/mouse-tracking/js/Detector.js"></script>
@@ -39,7 +40,7 @@
       <div class="col-md-4">
         <div class="panel-group">
           <!-- Zome view definition -->
-          <div class="panel panel-default" ng-controller="ZomeViewController as zomeView">
+          <div class="panel panel-primary" ng-controller="ZomeViewController as zomeView">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a  ng-click="viewCtrl.view.currentView = 1; zomeView.render()">
@@ -50,44 +51,16 @@
             <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView == 1">
               <div class="panel-body"  >
                 <zome-view-comp ></zome-view-comp>
+                <br/>
+                <floor-definition-comp  ng-controller="FloorDefinitionController as floorDef" ></floor-definition-comp>
+                <br />
+                <wall-definition-comp ng-controller="WallDefinitionController as wallDef"></wall-definition-comp>
               </div>
             </div>
           </div>
           <!-- End Zome view definition -->
-          <!-- Floor definition -->
-          <div class="panel panel-default" ng-controller="FloorDefinitionController as floorDef">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a  ng-click="viewCtrl.view.currentView = 2; floorDef.render()">
-                  Découpe de la forme
-                </a>
-              </h4>
-            </div>
-            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView == 2" >
-              <div class="panel-body">
-                <floor-definition-comp ></floor-definition-comp>
-              </div>
-            </div>
-          </div>
-          <!-- End Floor definition -->
-          <!-- Wall definition -->
-          <div class="panel panel-default" ng-controller="WallDefinitionController as wallDef">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a  ng-click="viewCtrl.view.currentView = 3; wallDef.render()">
-                  Hauteur des murs
-                </a>
-              </h4>
-            </div>
-            <div class="panel-collapse collapse in" ng-show="viewCtrl.view.currentView == 3">
-              <div class="panel-body" >
-                <wall-definition-comp></wall-definition-comp>
-              </div>
-            </div>
-          </div>
-          <!-- End Wall definition -->
           <!-- Log dimension  -->
-          <div class="panel panel-default" ng-controller="RhombeViewController as rhombeView">
+          <div class="panel panel-primary" ng-controller="RhombeViewController as rhombeView">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a  ng-click="viewCtrl.view.currentView = 4; rhombeView.render()">
@@ -103,7 +76,7 @@
           </div>
           <!-- End Log dimension -->
           <!-- Zome complet  -->
-          <div class="panel panel-default" ng-controller="CompleteZomeViewController as completeZomeView">
+          <div class="panel panel-primary" ng-controller="CompleteZomeViewController as completeZomeView">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a  ng-click="viewCtrl.view.currentView = 5; completeZomeView.render()">

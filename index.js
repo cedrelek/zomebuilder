@@ -9,7 +9,8 @@ angular.module("ZomeBuilder", ['ViewModule',
                                'RhombeViewModule',
                                '3DBeamDefinitionBuilderModule',
                                '3DZomeShapeBuilderModule',
-                               'CompleteZomeViewModule'])
+                               'CompleteZomeViewModule',
+                               'ui.bootstrap'])
 
   .controller("InitAppController",
 

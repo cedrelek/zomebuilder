@@ -22,6 +22,7 @@
     "bootstrap": "~3.3.5",
     "jquery": "~2.1.4",
     "d3": "~3.5.6",
-    "three.js": "~0.72.0"
+    "three.js": "~0.72.0",
+    "angular-bootstrap": "~0.14.3"
   }
 }
